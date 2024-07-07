@@ -78,17 +78,12 @@ export default function Quiz() {
       </Head>
       <main>
         <HeaderBarQuiz progressValue={progressValue} />
-
-        {activeQuestion && tabActive && (
-          <>
-            <TabPanel value={tabActive} index="passage">
-              <PassageQuiz />
-            </TabPanel>
-            <TabPanel value={tabActive} index="questions">
-              <QuestionQuiz />
-            </TabPanel>
-          </>
-        )}
+        <TabPanel value={tabActive} index="passage">
+          <PassageQuiz />
+        </TabPanel>
+        <TabPanel value={tabActive} index="questions">
+          <QuestionQuiz />
+        </TabPanel>
 
         <BottomTabs
           list={quizTabs}

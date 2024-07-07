@@ -1,10 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Skeleton, Typography } from "@mui/material";
 import { FontSizeSliderQuiz } from "./FontSizeSliderQuiz";
 import { CardWithBorder } from "@/components/commons/CardWithBorder";
 import { useSelector } from "react-redux";
 import {
   selectActiveQuestion,
   selectFontSizePassage,
+  selectStatus,
   updateFontSizePassage,
 } from "@/store/slices/quizSlice";
 import { useAppDispatch } from "@/store";
@@ -13,6 +14,8 @@ export const PassageQuiz = () => {
   const dispatch = useAppDispatch();
   const activeQuestion = useSelector(selectActiveQuestion);
   const fontSizePassage = useSelector(selectFontSizePassage);
+  const status = useSelector(selectStatus);
+  const isLoading = status === "loading";
 
   const passage = activeQuestion?.question_data.passage;
 
@@ -44,13 +47,21 @@ export const PassageQuiz = () => {
           left: 0,
         }}
       >
-        <Typography
-          fontSize={fontSizePassage}
-          fontWeight="400"
-          textAlign="justify"
-        >
-          {passage}
-        </Typography>
+        {!isLoading && status !== "idle" && status !== "failed" ? (
+          <Typography
+            fontSize={fontSizePassage}
+            fontWeight="400"
+            textAlign="justify"
+          >
+            {passage}
+          </Typography>
+        ) : (
+          <>
+            <Skeleton animation="wave" />
+            <Skeleton animation="wave" />
+            <Skeleton animation="wave" />
+          </>
+        )}
       </CardWithBorder>
     </Box>
   );
