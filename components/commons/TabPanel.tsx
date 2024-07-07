@@ -1,7 +1,7 @@
 import { Box, BoxProps } from "@mui/material";
 
 interface ITabPanelProps extends BoxProps {
-  value: string;
+  value?: string;
   index: string;
 }
 
