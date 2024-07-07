@@ -21,5 +21,7 @@ export const PointsCard = () => {
     </Stack>
   );
 
-  return <CardStats heading="Points" value={value} green />;
+  return (
+    <CardStats heading="Points" value={value} green data-testid="points-card" />
+  );
 };

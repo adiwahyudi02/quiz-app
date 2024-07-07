@@ -8,5 +8,12 @@ interface IScoreCard {
 export const ScoreCard = ({ heading = "Score" }: IScoreCard) => {
   const { formattedScore } = useSyncScore();
 
-  return <CardStats heading={heading} value={formattedScore} blue />;
+  return (
+    <CardStats
+      heading={heading}
+      value={formattedScore}
+      blue
+      data-testid="score-card"
+    />
+  );
 };

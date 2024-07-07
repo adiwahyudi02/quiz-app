@@ -64,6 +64,7 @@ export default function Result() {
                 textTransform: "none",
                 borderRadius: "10px",
               }}
+              data-testid="continue-result-button"
             >
               Continue
             </Button>
