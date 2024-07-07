@@ -31,7 +31,7 @@ interface IQuizState extends Questions {
   fontSizePassage: string;
 }
 
-const initialState: IQuizState = {
+export const initialStateQuizSlice: IQuizState = {
   questions: [],
   status: "idle",
   error: "",
@@ -53,7 +53,7 @@ export const fetchQuestions = createAsyncThunk<Question[]>(
 );
 
 export const checkAnswer = createAsyncThunk<CheckAnswer, Answer>(
-  "question/fetchQuestion",
+  "question/fetchAnswers",
   async (payload) => {
     const response = await fetcher.get("/answers", {
       params: {
@@ -70,7 +70,7 @@ export const checkAnswer = createAsyncThunk<CheckAnswer, Answer>(
 
 const quizSlice = createSlice({
   name: "quiz",
-  initialState,
+  initialState: initialStateQuizSlice,
   reducers: {
     nextQuestion: (state) => {
       const activeQuestionIndex = state.questions.findIndex(
