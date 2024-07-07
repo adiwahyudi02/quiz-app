@@ -27,6 +27,7 @@ export const ReactionQuiz = ({
         boxShadow: "0 1px 4px 0 rgba(0,0,0,.16)",
         ...sx,
       }}
+      data-testid={isCorrect ? "correct-reaction" : "incorrect-reaction"}
       {...props}
     >
       <Box sx={{ display: "flex", alignItems: "center" }}>

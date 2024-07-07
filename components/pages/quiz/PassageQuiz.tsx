@@ -30,6 +30,7 @@ export const PassageQuiz = () => {
         background: "#d0e0f9",
         padding: "15px 20px 35px 20px",
       }}
+      data-testid="passage-panel"
     >
       <FontSizeSliderQuiz
         fontSize={fontSizePassage}

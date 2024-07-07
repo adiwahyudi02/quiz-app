@@ -34,6 +34,7 @@ export const DialogInfoQuiz = ({
       },
     }}
     aria-describedby="info-dialog-description"
+    data-testid="dialog-info"
     {...props}
   >
     <Box
@@ -73,6 +74,7 @@ export const DialogInfoQuiz = ({
         borderRadius: "10px",
         marginTop: "24px",
       }}
+      data-testid="close-dialog-info-button"
       onClick={onClose}
     >
       Close

@@ -46,15 +46,22 @@ export const HeaderBarQuiz = ({ progressValue }: IHeaderBarQuiz) => {
     <>
       <HeaderBar yellow>
         <Toolbar>
-          <CloseIconButton onClick={handleToogleDialogExit} />
+          <CloseIconButton
+            onClick={handleToogleDialogExit}
+            data-testid="close-quiz-button"
+          />
           <Box sx={{ width: "100%" }}>
             <ProgressBar
               variant="determinate"
               value={progressValue}
               aria-label="Proggress"
+              data-testid="progress-quiz"
             />
           </Box>
-          <InfoIconButton onClick={handleToogleDialogInfo} />
+          <InfoIconButton
+            onClick={handleToogleDialogInfo}
+            data-testid="info-quiz-button"
+          />
         </Toolbar>
       </HeaderBar>
 

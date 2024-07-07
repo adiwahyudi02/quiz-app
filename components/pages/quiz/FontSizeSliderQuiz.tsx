@@ -37,6 +37,7 @@ export const FontSizeSliderQuiz = ({
         max={30}
         marks={fontSizeMarks}
         onChange={handleChangeFontSizeSlider}
+        data-testid="slider-font-size"
         {...(value !== null && { value })}
         {...props}
       />

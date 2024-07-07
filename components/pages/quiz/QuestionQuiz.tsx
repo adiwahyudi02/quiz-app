@@ -31,7 +31,7 @@ export const QuestionQuiz = () => {
   };
 
   return (
-    <Box>
+    <Box data-testid="questions-panel">
       <Box
         sx={{
           width: "100%",

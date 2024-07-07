@@ -41,6 +41,7 @@ export const QuestionOptionsQuiz = ({
                 answer: option,
               })
             }
+            data-testid={`quiz-options-${option}`}
           >
             {option}
           </Button>
