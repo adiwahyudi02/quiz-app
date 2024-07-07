@@ -36,6 +36,7 @@ export const CurrentLessons = () => {
           cursor: "default",
           boxShadow: "rgba(0, 0, 0, 0.15) 0px 1px 2px",
         }}
+        data-testid="lesson"
       >
         <Stack spacing={3}>
           <Typography variant="h4" fontWeight={700}>
@@ -55,6 +56,7 @@ export const CurrentLessons = () => {
               alignSelf: "end",
             }}
             aria-label="start-quiz"
+            data-testid="start-lesson-button"
             onClick={handleToogleDialogRules}
           >
             Start

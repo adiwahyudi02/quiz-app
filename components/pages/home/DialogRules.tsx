@@ -25,6 +25,7 @@ export const DialogRules = ({
     onClose={onClose}
     aria-labelledby="rules-dialog-title"
     aria-describedby="rules-dialog-description"
+    data-testid="dialog-rules"
     {...props}
   >
     <DialogTitle id="rules-dialog-title">Scoring Rules</DialogTitle>

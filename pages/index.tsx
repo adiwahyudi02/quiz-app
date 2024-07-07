@@ -21,6 +21,7 @@ export default function Home() {
               color="#003f88"
               fontWeight={800}
               marginBottom="24px"
+              data-testid="greeting"
             >
               Hello Learners!
             </Typography>

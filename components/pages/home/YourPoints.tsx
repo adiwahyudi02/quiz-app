@@ -12,6 +12,7 @@ export const YourPoints = () => {
       alignItems="center"
       justifyContent="center"
       spacing={1}
+      data-testid="your-points"
     >
       <Image src={PointImage} alt="point-image" width={20} height={20} />
       <Typography variant="h6" textAlign="center">
