@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { screen } from "@testing-library/react";
-import Result from "../result/index";
+import Result from "../pages/result/index";
 import { renderWithProviders } from "@/utils/renderWithProviders";
 import { getItem, setItem } from "@/utils/localstorage";
 import { localStorageKey } from "@/constants/localstorage";

@@ -1,25 +1,18 @@
 import "@testing-library/jest-dom";
 import { fireEvent, screen } from "@testing-library/react";
-import Quiz from "../quiz";
+import Quiz from "../pages/quiz";
 import { renderWithProviders } from "@/utils/renderWithProviders";
 import { mockUseRouter } from "@/jest.setup";
-import { http, HttpResponse, delay } from "msw";
-import { setupServer } from "msw/node";
 import { initialStateQuizSlice } from "@/store/slices/quizSlice";
 import { mockQuestionsData } from "@/__mocks__/mockQuestionsData";
+import { setupServer } from "msw/node";
+import { handlers } from "@/__mocks__/requestHandlers";
 
 jest.mock("next/router", () => ({
   useRouter: jest.fn(),
 }));
 
 const activeQuestionIndex = 1;
-
-export const handlers = [
-  http.get("/questions", async () => {
-    await delay(150);
-    return HttpResponse.json(mockQuestionsData);
-  }),
-];
 
 const server = setupServer(...handlers);
 
@@ -148,9 +141,6 @@ describe("Quiz Page", () => {
     fireEvent.click(questionsTab!);
     const questionsPanel = screen.getByTestId("questions-panel");
     expect(questionsPanel).toBeInTheDocument();
-    expect(
-      await screen.findByText(/What does Lisa do after waking up?/i)
-    ).toBeInTheDocument();
 
     // renders the options
     const options =

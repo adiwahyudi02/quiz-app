@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { fireEvent, screen } from "@testing-library/react";
-import Home from "../index";
+import Home from "../pages/index";
 import { renderWithProviders } from "@/utils/renderWithProviders";
 import { mockUseRouter } from "@/jest.setup";
 import { clearStorage, getItem, setItem } from "@/utils/localstorage";
