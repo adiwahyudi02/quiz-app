@@ -1,6 +1,7 @@
 import { Answer } from "@/types/answer";
 import { shuffleArray } from "@/utils/shuffleArray";
 import { Button, Stack } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
 
 interface IQuestionOptionsQuiz {
   questionId: number;
@@ -19,7 +20,12 @@ export const QuestionOptionsQuiz = ({
   isCorrect,
   onCheckAnswer,
 }: IQuestionOptionsQuiz) => {
-  const shuffledOptions = shuffleArray(options);
+  const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
+
+  useEffect(() => {
+    setShuffledOptions(shuffleArray(options));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Stack spacing={1}>
